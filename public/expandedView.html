@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Stylesheets
+  ============================================= -->
+    <link rel="stylesheet" href="{{BASE_URL}}/css/customNew.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+    <!-- Document Title
+  ============================================= -->
+    <title>eClass | University of the Aegean</title>
+
+</head>
+
+<body class="login-body">
+    <div class="mContainer">
+        <div class="row rContainer">
+            <div class="headerContainer col s12 m10 push-m1 z-depth-2  lighten-5">
+                <header>
+                    <div class="headerLogo">
+                        <img class="uAegLogo"
+                            src="https://myria.math.aegean.gr/~atsol/newpage/software/aegeanlogo/svg/bold-logo_sfiga_uof_aegean_en-rv.svg" />
+                    </div>
+                </header>
+
+            </div>
+            <div class="input-cart col s12 m10 push-m1 z-depth-2 grey lighten-5">
+                <div>
+                    <div class="col s12 m5 login">
+                        <h6 class="center darkBlueFont mrgnTpMid">UAegean | SEAL Digital Credentials: my ID Card <p
+                                class="mrgnTp">
+
+                                Field Experiment June 2021</p>
+                        </h6>
+                        <br>
+                        <form method="post" action='{{BASE_URL}}/SSI/submit-form' method='post' id="emailForm">
+                            <div class="sectionHeader">Your postal address</div>
+                            <div class="row multiField">
+                                <div class="input-field halfField">
+                                    <input type="text" id="userName" name="userName" class="inputEl" required="required"
+                                        placeholder="Enter your name" th:field="*{email}">
+                                    <label for="userName">
+                                        <i class="material-icons blueFont">To (your name)</i>
+                                    </label>
+                                    <div class="errMsg" th:text="${errMessage}"></div>
+                                </div>
+
+                                <div class="input-field halfField">
+                                    <input type="text" id="userAddress" name="userAddress" class="inputEl"
+                                        required="required" placeholder="Street/number/building" th:field="*{emailSec}">
+                                    <label for="userAddress">
+                                        <i class="material-icons blueFont">Address</i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row multiField">
+                                <div class="input-field thirdField">
+                                    <input type="text" id="postalCode" name="postalCode" class="inputEl"
+                                        required="required" placeholder="Enter your postal code" th:field="*{email}">
+                                    <label for="postalCode">
+                                        <i class="material-icons blueFont">Postal code</i>
+                                    </label>
+                                    <div class="errMsg" th:text="${errMessage}"></div>
+                                </div>
+
+                                <div class="input-field thirdField">
+                                    <input type="text" id="cityField" name="cityField" class="inputEl"
+                                        required="required" placeholder="City" th:field="*{emailSec}">
+                                    <label for="cityField">
+                                        <i class="material-icons blueFont">City</i>
+                                    </label>
+                                </div>
+                                <div class="input-field thirdField">
+                                    <input type="text" id="countryField" name="countryField" class="inputEl"
+                                        required="required" placeholder="Country" th:field="*{emailSec}">
+                                    <label for="countryField">
+                                        <i class="material-icons blueFont">Country</i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="sectionHeader">Your email address</div>
+                            <div class="row multiField">
+                                <div class="input-field halfField">
+                                    <input type="email" id="userEmail" name="userEmail" class="validate inputEl"
+                                        required="required" placeholder="Enter your personal email" th:field="*{email}">
+                                    <label for="userEmail">
+                                        <i class="material-icons blueFont">email</i>
+                                    </label>
+                                    <div class="errMsg" th:text="${errMessage}"></div>
+                                </div>
+
+                                <div class="input-field halfField">
+                                    <input type="email" id="userEmailSec" class="validate inputEl" required="required"
+                                        placeholder="Confirm your email" th:field="*{emailSec}">
+                                    <label for="userEmailSec">
+                                        <i class="material-icons blueFont">email</i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6 rightEl">
+                                    <button type="submit" id="subBtn"
+                                        class="btn waves-effect waves-light darkBlueBg rightEl" disabled>Next</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Signup form -->
+                    <div class="rightBlockFlex">
+                        <div class="col s12 m7 signup">
+                            <div>
+                                <h5 class="darkBlueFont">Please provide your postal and email address</h5>
+
+                                <div>
+                                    <ul class="listEl">
+                                        <li class="list-group-item listEl">To enjoy an “iced brew” shopping
+                                            experience<br>
+
+                                        <li class="list-group-item listEl">With <a
+                                                href="https://www.instagram.com/44barcoffeeshop/?hl=en" target="_blank">44 Cafe</a>
+                                            shopping package</li>
+                                        <li class="list-group-item listEl">Combining a personalized gift card and</li>
+                                        <li class="list-group-item listEl">Tips for preparing a great “iced brew”</li>
+                                        <li class="list-group-item listEl">
+                                            <p class="noBtmMrgn">To ensure privacy safeguards and online</p>
+                                        </li>
+                                        <li class="list-group-item listEl">We do not proceed with email verification
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+
+                    <footer id="footer">
+                        <div th:fragment="footer" class="footer-widgets-wrap clearfix row">
+                            <hr class="footerHr">
+                            <div class="footerContainer">
+                                <div class="leftFooterContainer">
+                                    <div class="lfImgAndText">
+                                        <div>
+                                            <img src="{{BASE_URL}}/img/cef-logo.png" />
+                                        </div>
+                                        <div class="lfImgAndText--text">
+                                            <div>
+                                                <b>Co-financed by the European Union</b>
+                                                <hr class="hrFtr">
+                                            </div>
+                                            <div>
+                                                Connecting Europe Facility
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btmText">
+                                        
+                                          
+                                    </div>
+
+                                </div>
+
+                                <div class="rightFooter">
+                                    <div>
+                                        University of the Aegean | i4m Lab
+                                    </div>
+                                    <div>
+                                        Web address | Dpt: <a
+                                            href="http://www.fme.aegean.gr/"target="_blank" >http://www.fme.aegean.gr/</a>
+                                    </div>
+                                    <div>
+                                        Web address | i4m Lab: <a
+                                            href="http://www.atlantis-group.gr/i4Mlab" target="_blank">http://www.atlantis-group.gr/i4Mlab</a>
+                                    </div>
+                                    <div>
+                                        e-mail: <a href="mailto: i4m-lab@aegean.gr" target="_blank">i4m-lab@aegean.gr</a>
+                                    </div>
+                                    <div>
+                                        Service developed by UAegean | i4m Lab © 2021
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            if (!$('#userEmail').val().trim()) {
+                $('#subBtn').prop('disabled', true);
+            } else {
+                if ($('#userEmail').val() === $('#userEmailSec').val()) {
+                    $('#subBtn').prop('disabled', false);
+                }
+            }
+
+
+            $('body').on('change', '#userEmail', function () {
+                if (!$('#userEmail').val().trim()) {
+                    $('#subBtn').prop('disabled', true);
+                } else {
+                    if ($('#userEmail').val() === $('#userEmailSec').val()) {
+                        $('#subBtn').prop('disabled', false);
+                    } else {
+                        $('#subBtn').prop('disabled', true);
+                    }
+                }
+
+            });
+            $('body').on('change', '#userEmailSec', function () {
+
+                if ($('#userEmail').val() === $('#userEmailSec').val()) {
+                    $('#subBtn').prop('disabled', false);
+                } else {
+                    $('#subBtn').prop('disabled', true);
+                }
+
+            });
+        });
+    </script>
+ 
+    </div>
+
+</body>
+
+</html>

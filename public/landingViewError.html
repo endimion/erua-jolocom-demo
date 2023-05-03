@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link rel="stylesheet" href="{{BASE_URL}}/css/customNew.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+    <!-- Document Title
+    ============================================= -->
+    <title>eClass | University of the Aegean</title>
+
+</head>
+
+<body class="login-body">
+    <div class="mContainer">
+        <div class="row rContainer">
+            <div class="headerContainer col s12 m10 push-m1 z-depth-2  lighten-5">
+                <header>
+                    <div class="headerLogo">
+                        <img class="uAegLogo"
+                            src="https://myria.math.aegean.gr/~atsol/newpage/software/aegeanlogo/svg/bold-logo_sfiga_uof_aegean_en-rv.svg" />
+                    </div>
+                </header>
+
+            </div>
+            <div class="input-cart col s12 m10 push-m1 z-depth-2 grey lighten-5">
+                <div>
+                    <div class="col s12 m5 login">
+                        <h6 class="center darkBlueFont">e-Privacy and Cybersecurity: Technology and Policy issues <br>
+
+                            Login to intoductory course
+                        </h6>
+                        <br>
+                          {{error}}
+                    </div>
+                    <!-- Signup form -->
+                    <div class="col s12 m7 signup">
+                        <div>
+                            <h5 class="darkBlueFont center">How to log in with UAegean myIDs?</h5>
+
+                            <div>
+                                <ul class="listEl">
+                                    <li class="list-group-item listEl">Install <b>uPort</b> on your mobile device <br>
+                                        <span class="identEl"><a
+                                                href="https://apps.apple.com/us/app/uport-id/id1123434510">Apple
+                                                Store</a> | <a
+                                                href="https://play.google.com/store/apps/details?id=com.uportMobile&hl=en&gl=US">Google
+                                                Play</a></span>
+                                    </li>
+                                    <!--                            <li class="list-group-item listEl">Click on <b>Next</b></li>-->
+
+                                    <li class="list-group-item listEl">Scan the provided <b>QR code</b> with uPort</li>
+                                    <li class="list-group-item listEl">Click on <b>Next</b> to start (Follow the
+                                        instructions)</li>
+                                    <li class="list-group-item listEl"><b>Check</b> your email</li>
+                                    <li class="list-group-item listEl center">UAegean myIDs:<a
+                                            href="https://docs.google.com/document/d/1uVp51CdeL6VIpIW7_uDDNKSVvuRrs0Kz-BOdapc8VrA/edit?usp=sharing">
+                                            What is it? How to proceed?</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+
+                    <footer id="footer">
+                        <div th:fragment="footer" class="footer-widgets-wrap clearfix row">
+                            <hr class="footerHr">
+                            <div class="footerContainer">
+                                <div class="leftFooterContainer">
+                                    <div class="lfImgAndText">
+                                        <div>
+                                            <img src="{{BASE_URL}}/img/cef-logo.png" />
+                                        </div>
+                                        <div class="lfImgAndText--text">
+                                            <div>
+                                                <b>Co-financed by the European Union</b>
+                                                <hr class="hrFtr">
+                                            </div>
+                                            <div>
+                                                Connecting Europe Facility
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btmText">
+                                        <p>
+                                            <!-- The UAegean ERASMUS myID Card Service has been co-financed<br>
+                                            by the Connecting Europe Facility (CEF) of the European Union<br>
+                                            (Seal Project: Grant Agreement No INEA/CEF/ICT/A2018/1633170)</p> -->
+                                    </div>
+
+                                </div>
+
+                                <div class="rightFooter">
+                                    <div>
+                                        University of the Aegean | Dpt of Financial and Management Engineering | i4m Lab
+                                    </div>
+                                    <div>
+                                        Web address | Dpt: <a
+                                            href="http://www.fme.aegean.gr/">http://www.fme.aegean.gr/</a>
+                                    </div>
+                                    <div>
+                                        Web address | i4m Lab: <a
+                                            href="http://www.atlantis-group.gr/i4Mlab">http://www.atlantis-group.gr/i4Mlab</a>
+                                    </div>
+                                    <div>
+                                        e-mail: i4mlab-courses@aegean.gr
+                                    </div>
+                                    <div>
+                                        Service developed by UAegean | i4m Lab © 2021
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            if (!$('#userEmail').val().trim()) {
+                $('#subBtn').prop('disabled', true);
+            } else {
+                if ($('#userEmail').val() === $('#userEmailSec').val()) {
+                    $('#subBtn').prop('disabled', false);
+                }
+            }
+
+
+            $('body').on('change', '#userEmail', function () {
+                if (!$('#userEmail').val().trim()) {
+                    $('#subBtn').prop('disabled', true);
+                } else {
+                    if ($('#userEmail').val() === $('#userEmailSec').val()) {
+                        $('#subBtn').prop('disabled', false);
+                    } else {
+                        $('#subBtn').prop('disabled', true);
+                    }
+                }
+
+            });
+            $('body').on('change', '#userEmailSec', function () {
+
+                if ($('#userEmail').val() === $('#userEmailSec').val()) {
+                    $('#subBtn').prop('disabled', false);
+                } else {
+                    $('#subBtn').prop('disabled', true);
+                }
+
+            });
+        });
+    </script>
+    </div>
+
+</body>
+
+</html>

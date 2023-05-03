@@ -1,0 +1,10 @@
+// {
+//   "realm": "taxis",
+//   "auth-server-url": "https://dss1.aegean.gr/auth",
+//   "ssl-required": "external",
+//   "resource": "testClient",
+//   "credentials": {
+//     "secret": "cc5c6b40-18a6-43a2-95fc-9b4b973be349"
+//   },
+//   "confidential-port": 0
+// }

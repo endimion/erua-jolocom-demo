@@ -1,0 +1,10 @@
+{
+  "realm": "erua-issuer",
+  "auth-server-url": "https://dss1.aegean.gr/auth",
+  "ssl-required": "external",
+  "resource": "test-client",
+  "credentials": {
+    "secret": "19283f64-8941-451e-9453-71bf964439ce"
+  },
+  "confidential-port": 0
+}

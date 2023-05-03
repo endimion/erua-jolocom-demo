@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  erua-id-demo:
+    image: endimion13/erua-id-demo:0.0.1b
+    environment:
+      BASE_PATH: "/erua-demo"
+      MEMCACHED_URL: memcached:11211
+     # VERIFIER_URI: "https://dss1.aegean.gr/isErasmus/SSI/verify?spId="
+    ports:
+      - 8188:8188
+  
+  memcached:
+    image: sameersbn/memcached:1.5.6-2
+    ports:
+      - 11111:11211
+  
+  nginx: 
+    image: nginx:latest
+    container_name: production_nginx
+    volumes:
+        - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+        - 80:80
+        - 443:443

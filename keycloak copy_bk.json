@@ -1,0 +1,10 @@
+{
+  "realm": "SSI",
+  "auth-server-url": "https://dss1.aegean.gr/auth",
+  "ssl-required": "external",
+  "resource": "testssi",
+  "credentials": {
+    "secret": "8c288fd3-14f9-4f1c-9e03-8ca8b3a3ec67"
+  },
+  "confidential-port": 0
+}
